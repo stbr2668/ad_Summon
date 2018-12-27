@@ -1,0 +1,33 @@
+<style>#prospector-button a {
+			background-color: #ffffff;
+			color: #000000;
+                        border: 1px solid #000000;
+			text-decoration: none;
+			font-weight: normal;
+			padding: 0.5em; 
+			font-size: 18px;
+			border-radius: 1px;
+		}
+#prospector-button a:hover {
+			background-color: #CFB87C;
+			
+		}</style>
+<script>// this script was created by Tabatha Farney at UCCS
+// this is a script to create a custom search link in a panel
+// the link sends the query from Summon to a new search in an external system
+// get URL string
+var urlString = window.location.href;
+// init object to hold key-value pairs for URL parameters
+var params = {};
+// parse parameters
+urlString.replace(/([^=&]+)=([^&]*)/g, function(m, key, value) {
+    params[decodeURIComponent(key)] = decodeURIComponent(value);
+});
+// build the link
+var searchLink2 = "http://prospector.coalliance.org/search~S0/?searchtype=X&searcharg=" + params["q"];
+// build the HTML markup and then create the new object
+var markup2 = "<p>Automatically search other libraries and request it using Prospector. This is a free service for CU Boulder students, employees, and alumn.</p><p id='prospector-button'><a href='" + searchLink2 + "' target='_blank'>Search Prospector</a></p>";
+		var panelElement2 = $(markup2);
+// append the new object to the container
+$("#linkContainer").append(panelElement2);</script>
+<div id="linkContainer">&nbsp;</div>
