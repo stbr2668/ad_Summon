@@ -1,6 +1,6 @@
 <style>#prospector-button a {
-			background-color: #ffffff;
-			color: #000000;
+			background-color: #5E5E5E;
+			color: #ffffff;
                         border: 1px solid #000000;
 			text-decoration: none;
 			font-weight: normal;
@@ -9,7 +9,7 @@
 			border-radius: 1px;
 		}
 #prospector-button a:hover {
-			background-color: #CFB87C;
+			background-color: #454545;
 			
 		}</style>
 <script>// this script was created by Tabatha Farney at UCCS
@@ -26,7 +26,7 @@ urlString.replace(/([^=&]+)=([^&]*)/g, function(m, key, value) {
 // build the link
 var searchLink2 = "http://prospector.coalliance.org/search~S0/?searchtype=X&searcharg=" + params["q"];
 // build the HTML markup and then create the new object
-var markup2 = "<p>Automatically search other libraries and request it using Prospector. This is a free service for CU Boulder students, employees, and alumn.</p><p id='prospector-button'><a href='" + searchLink2 + "' target='_blank'>Search Prospector</a></p>";
+var markup2 = "<p>Automatically search other libraries and request it using Prospector. This is a free service for CU Boulder students, employees, and alumni.</p><p id='prospector-button'><a href='" + searchLink2 + "' target='_blank'>Search Prospector</a></p>";
 		var panelElement2 = $(markup2);
 // append the new object to the container
 $("#linkContainer").append(panelElement2);</script>
