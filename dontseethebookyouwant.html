@@ -24,7 +24,7 @@ urlString.replace(/([^=&]+)=([^&]*)/g, function(m, key, value) {
     params[decodeURIComponent(key)] = decodeURIComponent(value);
 });
 // build the link
-var searchLink2 = "http://prospector.coalliance.org/search~S0/?searchtype=X&searcharg=" + params["q"];
+var searchLink2 = "https://encore.coalliance.org/iii/encore/search/C__S" + params["q"];
 // build the HTML markup and then create the new object
 var markup2 = "<p>Automatically search other libraries and request it using Prospector. This is a free service for CU Boulder students, employees, and alumni.</p><p id='prospector-button'><a href='" + searchLink2 + "' target='_blank'>Search Prospector</a></p>";
 		var panelElement2 = $(markup2);
