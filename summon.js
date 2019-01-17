@@ -12,7 +12,7 @@ This JavaScript will place the Prospector button on the main page. Thanks to Aur
 -nt
 */ 
 
-    $('span.input-group-btn').append('<button id="prospector-search" style="margin-left:1em;" class="btn btn-default" type="button">Search Prospector</button>');      
+    $('span.input-group-btn').append('<button id="prospector-search" style="margin-left:1em;" class="btn btn-link" type="button">Search Prospector</button>');      
     // Build the URL for the 'Search Prospector' button
     $('button#prospector-search').click(function() {
       // grab search term from summon url
