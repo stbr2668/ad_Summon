@@ -34,7 +34,7 @@ This JavaScript will place the Prospector button on the main page. Thanks to Aur
 This JavaScript will add BrowZine functionality to the results list
 */ 
 
-var browzine = {
+window.browzine = {
   api: "https://api.thirdiron.com/public/v1/libraries/105",
   apiKey: "8ccc925e-d8d0-439e-93de-70661233eee4",
   journalWording: "View the Journal",
