@@ -6,6 +6,12 @@ $(document).ready(function() {
 
   // call for summon local custimzation 
   function localCustomizations() {
+     
+ /*
+This JavaScript will keep the Prospector link from making the search bar disappear on iphones
+-nt
+*/ 
+$('div.input-group').css( "width", "120%" );
 
 /*
 This JavaScript will place the Prospector button on the main page. Thanks to Auraria for the script
