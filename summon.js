@@ -62,5 +62,33 @@ $(document).ready(function(){
 $( "body" ).prepend( "<script>var vPagePath = window.location.href;dataLayer = [{'virtualURL': vPagePath}];</script><noscript><iframe src='//www.googletagmanager.com/ns.html?id=GTM-5QJLPW4' height='0' width='0' style='display:none;visibility:hidden'></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5QJLPW4');</script>");
 }); 
 
+/*
+The following JavaScript is from Brian Holda at Davenport University. -NT
+*/ 
+
+//begin jQuery document.ready
+$(document).ready(function () {
+	
+//add Summon breadcrumbs
+  function addBreadcrumbs() {
+    //create breadcrumbs
+    var cuBreadcrumbsHtml = "\n        <!-- CU Libraries Breadcrumbs-->\n        <ol class=\"summonBreadcrumbs text-left\" aria-label=\"Breadcrumbs\">\n            <li><a href=\"https://www.colorado.edu/libraries/\">Library Home</a></li>\n            <li>OneSearch</li>\n        </ol>\n      ";
+    
+    //insert breadcrumbs
+    var siteHeaderDiv = document.querySelector(".siteHeader");
+    siteHeaderDiv.insertAdjacentHTML("afterbegin", cuBreadcrumbsHtml);
+  } //end function
+
+  addBreadcrumbs(); 
+		
+//add seperate css file	
+  var cssPath = "https://culibraries.colorado.edu/static/css/";
+  $("head").append('<link rel="stylesheet" type="text/css" href="' + cssPath + 'cubsummon.css" />'); // Accessibility titles
+
+}); //end jQuery document.ready
+
+/*
+End Timeout fuction to allow for local customization
+*/
   }
 });
