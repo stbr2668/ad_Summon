@@ -54,6 +54,23 @@ browzine.script.src = "https://s3.amazonaws.com/browzine-adapters/summon/browzin
 document.head.appendChild(browzine.script);
 
 /*
+This JavaScript will add a COVID-19 alert link for All Print Items Currently Unavailable Link on print books. Code adapted from California College of the Arts Libraries
+*/ 
+    var e = angular.module("summonApp"),
+        f = angular.element("html").scope().$root;
+    f.$on("apiSuccess", function() {
+        setTimeout(function() { // broken link button
+            $(".Z3988").parent().each(function() {
+                if (-1 === $(this).text().indexOf("All Physical") && -1 === $(this).text().indexOf("Find Similar")) {
+                    var a = angular.element(this).scope().doc,
+                        b = a.content_type;
+                    a && ("Book" === b || "Video Recording" === b || "Film" === b || "Journal" === b || "Music Score" === b) && $(this).append("<span class=\"availability\" style=\"margin-left:1em\"><a class=\"availabilityLink reportBroken\" href=\"https://www.colorado.edu/libraries/spring20-updates#Remote-Access-to-Libraries-Collections\" target=\"_blank\"><i class=\"uxf-icon uxf-attention\"></i> All Physical Items Currently Unavailable</a></span>")
+                }
+            })
+        })
+    })
+	
+/*
 This JavaScript file will enable the Access and Discovery group to track virtual pages and click events in the Summon interface through Google Analytics deployed through Google Tag Manager. The file will also hold our BrowZine integration, which allows users direct PDF downloads and journal browsing capabilities from directly in BrowZine. The address is referenced from the Summon Console by Nicole Trujillo
 -rl
 */ 
