@@ -13,28 +13,18 @@ This JavaScript will keep the Prospector link from making the search bar disappe
 */ 
 $('div.input-group').css( "width", "120%" );
 
+
 /*
-This JavaScript will place the Prospector button on the main page. Thanks to Auraria for the script
+This JavaScript will place the Interlibrary Loan button on the main page. Thanks to Auraria for the script
 -nt
 */ 
 
-    $('span.input-group-btn').append('<button id="prospector-search" style="margin-left:1em;" class="btn btn-default" type="button">Search Prospector</button>');      
-    // Build the URL for the 'Search Prospector' button
-    $('button#prospector-search').click(function() {
-      // grab search term from summon url
-      var hash = window.location.hash.slice(1);
-      var array = hash.split("&");
-      var values, form_data = {};
-
-      for (var i = 0; i < array.length; i += 1) {
-        values = array[i].split("=");
-        form_data[values[0]] = values[1];
-      }
-      var searchterm = form_data['q'];
-      //search in propsector encore instead in classic Sierra WebPac
-      window.location.href = 'https://encore.coalliance.org/iii/encore/search/C__S' +searchterm +'__Orightresult';
+    $('span.input-group-btn').append('<button id="ill-search" style="margin-left:1em;" class="btn btn-link" type="button">Interlibrary Loan</button>');      
+    // Build the URL for the 'Interlibrary Loan' button
+    $('button#ill-search').click(function() {
+      //Send to Borrowing for ILLiad
+      window.open('https://www.colorado.edu/libraries/services/borrowing-other-libraries-and-document-delivery-service?utm_source=OneSearch&utm_medium=Link&utm_campaign=InterlibraryLoan');
     });
-
 
 /*
 This JavaScript will add BrowZine functionality to the results list
